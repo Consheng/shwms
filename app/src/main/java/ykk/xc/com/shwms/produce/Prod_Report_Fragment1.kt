@@ -352,6 +352,7 @@ class Prod_Report_Fragment1 : BaseFragment() {
         m.prodEntryId = pfe.prodEntryId
         m.prodNo = pfe.prodNo
         m.prodQty = pfe.prodQty
+        m.salOrderNo = pfe.salOrderNo
         m.createUserId = user!!.id
 
         run_save(m)

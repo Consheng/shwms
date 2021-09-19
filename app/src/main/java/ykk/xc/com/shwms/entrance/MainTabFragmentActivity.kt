@@ -364,11 +364,9 @@ class MainTabFragmentActivity : BaseActivity(), IDownloadContract.View {
                     mPresenter!!.downApk(context, url)
                     dialog.dismiss()
                 }
-                //                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                //                    public void delClick(DialogInterface dialog, int which) {
-                //                        dialog.dismiss();
-                //                    }
-                //                })
+                /*.setNegativeButton("取消") { dialog, which ->
+                        dialog.dismiss();
+                }*/
                 .create()// 创建
         alertDialog.setCancelable(false)
         alertDialog.setCanceledOnTouchOutside(false)

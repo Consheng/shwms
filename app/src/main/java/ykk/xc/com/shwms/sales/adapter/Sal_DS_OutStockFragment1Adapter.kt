@@ -26,6 +26,7 @@ class Sal_DS_OutStockFragment1Adapter(private val context: Activity, datas: List
         val tv_mtlName = holder.obtainView<TextView>(R.id.tv_mtlName)
         val tv_batchNo = holder.obtainView<TextView>(R.id.tv_batchNo)
         val tv_fmodel = holder.obtainView<TextView>(R.id.tv_fmodel)
+        val tv_carName = holder.obtainView<TextView>(R.id.tv_carName)
         val tv_num = holder.obtainView<TextView>(R.id.tv_num)
         val tv_sourceQty = holder.obtainView<TextView>(R.id.tv_sourceQty)
         val tv_sourceNo = holder.obtainView<TextView>(R.id.tv_sourceNo)
@@ -45,6 +46,7 @@ class Sal_DS_OutStockFragment1Adapter(private val context: Activity, datas: List
             tv_batchNo.visibility = View.INVISIBLE
         }*/
         tv_fmodel.text = Html.fromHtml("规格:&nbsp;<font color='#6a5acd'>"+ Comm.isNULLS(entity.icItem.fmodel)+"</font>")
+        tv_carName.text = Html.fromHtml("车型:&nbsp;<font color='#6a5acd'>"+ Comm.isNULLS(entity.icItem.carModelName)+"</font>")
 
         tv_num.text = Html.fromHtml("出库数:&nbsp;<font color='#FF0000'>"+ df.format(entity.fqty) +"</font>")
         tv_sourceQty.text = Html.fromHtml("订单数:&nbsp;<font color='#6a5acd'>"+ df.format(entity.fsourceQty) +"</font>&nbsp;<font color='#666666'>"+ entity.unit.fname +"</font>")

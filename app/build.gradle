@@ -16,8 +16,8 @@ android {
         applicationId 'ykk.xc.com.shwms'
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 6
-        versionName '1.0.6'
+        versionCode 10
+        versionName '1.1.0'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         // 华为scan kit （“en-rGB”（英式英语） 和 “zh-rCN”（简体中文））

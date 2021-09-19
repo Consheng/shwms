@@ -67,10 +67,19 @@
         android:textSize="@dimen/_12sp" />
 
     <TextView
-        android:id="@+id/tv_num"
+        android:id="@+id/tv_carName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_fmodel"
+        android:text="车型："
+        android:textColor="@color/c_666666"
+        android:textSize="@dimen/_12sp" />
+
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_carName"
         android:text="出库数："
         android:textColor="@color/c_666666"
         android:textSize="@dimen/_12sp" />
@@ -79,7 +88,7 @@
         android:id="@+id/tv_sourceQty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_fmodel"
+        android:layout_below="@+id/tv_carName"
         android:layout_marginLeft="@dimen/_6dp"
         android:layout_toRightOf="@+id/tv_num"
         android:text="订单数："
@@ -90,7 +99,7 @@
         android:id="@+id/tv_sourceNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_fmodel"
+        android:layout_below="@+id/tv_carName"
         android:layout_marginLeft="@dimen/_6dp"
         android:layout_toRightOf="@+id/tv_sourceQty"
         android:text="订单："

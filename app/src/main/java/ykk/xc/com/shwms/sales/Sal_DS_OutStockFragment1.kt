@@ -51,6 +51,8 @@ class Sal_DS_OutStockFragment1 : BaseFragment() {
         private val UNSUCC2 = 501
         private val SUCC3 = 202
         private val UNSUCC3 = 502
+        private val SUCC4 = 203
+        private val UNSUCC4 = 503
         private val SAVE = 204
         private val UNSAVE = 504
 
@@ -137,8 +139,18 @@ class Sal_DS_OutStockFragment1 : BaseFragment() {
                         if (m.isNULLS(errMsg).length == 0) errMsg = "很抱歉，没有找到数据！"
                         Comm.showWarnDialog(m.mContext, errMsg)
                     }
+                    SUCC4 -> { // 是否自动打印 进入
+                        val result = JsonUtil.strToString(msgObj)
+                        if(m.isNULLS(result).equals("Y")) {
+                            // 查询打印数据
+                            m.run_findPrintData(m.checkDatas[0].icstockBill.expressNo)
+                        }
+                    }
+                    UNSUCC4 -> { // 是否自动打印  失败
+
+                    }
                     SAVE -> { // 保存成功 进入
-                        m.toasts("保存成功✔，开始打印")
+                        m.toasts("保存成功✔")
                         m.btn_scan.isEnabled = false
                         m.et_code.isEnabled = false
                         m.isTextChange = true
@@ -147,8 +159,12 @@ class Sal_DS_OutStockFragment1 : BaseFragment() {
                             m.lin_focusMtl.setBackgroundResource(R.drawable.back_style_gray3)
                         },300)
 
+                        /*
                         // 保存完成，就查询打印数据
                         m.run_findPrintData(m.checkDatas[0].icstockBill.expressNo)
+                        */
+                        // 先判断是否需要打印
+                        m.run_outStockAutoPrint()
                         /*
                         // 汇报最后一个工序
                         if(m.btTmp != null) {
@@ -979,6 +995,43 @@ class Sal_DS_OutStockFragment1 : BaseFragment() {
                     return
                 }
                 val msg = mHandler.obtainMessage(SUCC3, result)
+                mHandler.sendMessage(msg)
+            }
+        })
+    }
+
+    /**
+     * 扫码出库是否自动打印电子面单
+     */
+    private fun run_outStockAutoPrint() {
+        showLoadDialog("准备打印...", false)
+        val mUrl = getURL("appPrint/outStockAutoPrint")
+        val formBody = FormBody.Builder()
+                .build()
+
+        val request = Request.Builder()
+                .addHeader("cookie", getSession())
+                .url(mUrl)
+                .post(formBody)
+                .build()
+
+        val call = okHttpClient!!.newCall(request)
+        call.enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                mHandler.sendEmptyMessage(UNSUCC4)
+            }
+
+            @Throws(IOException::class)
+            override fun onResponse(call: Call, response: Response) {
+                val body = response.body()
+                val result = body.string()
+                LogUtil.e("run_outStockAutoPrint --> onResponse", result)
+                if (!JsonUtil.isSuccess(result)) {
+                    val msg = mHandler.obtainMessage(UNSUCC4, result)
+                    mHandler.sendMessage(msg)
+                    return
+                }
+                val msg = mHandler.obtainMessage(SUCC4, result)
                 mHandler.sendMessage(msg)
             }
         })

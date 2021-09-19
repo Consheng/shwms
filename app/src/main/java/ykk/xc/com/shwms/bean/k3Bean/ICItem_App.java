@@ -23,6 +23,13 @@ public class ICItem_App implements Serializable {
 	private int fspId;				// 默认库位id
 	private int icItemTypeId;		// 产品类型id ( 20013：主产品，20014：副产品，2000003：赠品 )
 	private int isCombo;			// 是否为套餐（1：是，0：否）
+	private int seriesId;			// 序列id
+	private int structureId;		// 结构id
+	private String seatNum;			// 座位数
+	private int isSingle;			// 是否单片，1代表是，0代表否
+	private int carModelId;			// 产品车型id
+	private String carModelSeatNum;	// 产品车型对应座位数
+	private String carModelName;	// 车型名称
 
 	private Unit_App unit;
 	private Stock_App stock; // 仓库
@@ -179,5 +186,59 @@ public class ICItem_App implements Serializable {
 		this.check = check;
 	}
 
-	
+	public int getSeriesId() {
+		return seriesId;
+	}
+
+	public void setSeriesId(int seriesId) {
+		this.seriesId = seriesId;
+	}
+
+	public int getStructureId() {
+		return structureId;
+	}
+
+	public void setStructureId(int structureId) {
+		this.structureId = structureId;
+	}
+
+	public String getSeatNum() {
+		return seatNum;
+	}
+
+	public void setSeatNum(String seatNum) {
+		this.seatNum = seatNum;
+	}
+
+	public int getIsSingle() {
+		return isSingle;
+	}
+
+	public void setIsSingle(int isSingle) {
+		this.isSingle = isSingle;
+	}
+
+	public int getCarModelId() {
+		return carModelId;
+	}
+
+	public void setCarModelId(int carModelId) {
+		this.carModelId = carModelId;
+	}
+
+	public String getCarModelSeatNum() {
+		return carModelSeatNum;
+	}
+
+	public void setCarModelSeatNum(String carModelSeatNum) {
+		this.carModelSeatNum = carModelSeatNum;
+	}
+
+	public String getCarModelName() {
+		return carModelName;
+	}
+
+	public void setCarModelName(String carModelName) {
+		this.carModelName = carModelName;
+	}
 }
