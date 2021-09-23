@@ -159,10 +159,10 @@ class Sal_DS_OutStockFragment1 : BaseFragment() {
                             m.lin_focusMtl.setBackgroundResource(R.drawable.back_style_gray3)
                         },300)
 
-                        /*
+
                         // 保存完成，就查询打印数据
-                        m.run_findPrintData(m.checkDatas[0].icstockBill.expressNo)
-                        */
+                        //m.run_findPrintData(m.checkDatas[0].icstockBill.expressNo)
+
                         // 先判断是否需要打印
                         m.run_outStockAutoPrint()
                         /*
