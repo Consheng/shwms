@@ -55,6 +55,7 @@ public class ProcessflowEntry implements Serializable {
 	private int mtlId;				// 物料id
 	private boolean defaultProcess;	// 是否默认工序
 	private int seatNum;			// 座位数id
+	private String carModelName;	// 车型名称
 	
 
 	public ProcessflowEntry() {
@@ -283,6 +284,14 @@ public class ProcessflowEntry implements Serializable {
 
 	public void setDeptId(int deptId) {
 		this.deptId = deptId;
+	}
+
+	public String getCarModelName() {
+		return carModelName;
+	}
+
+	public void setCarModelName(String carModelName) {
+		this.carModelName = carModelName;
 	}
 
 }

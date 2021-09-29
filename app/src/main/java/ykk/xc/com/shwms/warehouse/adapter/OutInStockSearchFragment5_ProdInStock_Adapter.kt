@@ -33,7 +33,11 @@ class OutInStockSearchFragment5_ProdInStock_Adapter(private val context: Activit
         // 赋值
         tv_pdaNo.text = Html.fromHtml("PDA单号:&nbsp;<font color='#000000'>"+entity.pdaNo+"</font>")
         tv_fdate.text = Html.fromHtml("入库日期:&nbsp;<font color='#000000'>"+entity.fdate+"</font>")
-        tv_deptName?.text = Html.fromHtml("部门:&nbsp;<font color='#FF4400'>"+entity.department.fname+"</font>")
+        if(entity.department != null) {
+            tv_deptName?.text = Html.fromHtml("部门:&nbsp;<font color='#FF4400'>"+entity.department.fname+"</font>")
+        } else {
+            tv_deptName?.text = "部门："
+        }
         tv_baoguanMan.text = Html.fromHtml("保管人:&nbsp;<font color='#000000'>"+entity.baoguanMan+"</font>")
 
         if (entity.isShowButton) {

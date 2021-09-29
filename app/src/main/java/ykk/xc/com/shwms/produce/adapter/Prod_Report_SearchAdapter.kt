@@ -25,6 +25,7 @@ class Prod_Report_SearchAdapter(private val context: Activity, datas: List<WorkR
         val tv_prodNo = holder.obtainView<TextView>(R.id.tv_prodNo)
         val tv_procedureName = holder.obtainView<TextView>(R.id.tv_procedureName)
         val tv_reportType = holder.obtainView<TextView>(R.id.tv_reportType)
+        val tv_carModelName = holder.obtainView<TextView>(R.id.tv_carModelName)
         val tv_userName = holder.obtainView<TextView>(R.id.tv_userName)
         val tv_barcode = holder.obtainView<TextView>(R.id.tv_barcode)
         val tv_reportDate = holder.obtainView<TextView>(R.id.tv_reportDate)
@@ -34,6 +35,7 @@ class Prod_Report_SearchAdapter(private val context: Activity, datas: List<WorkR
         tv_mtlName.text = entity.icItem.fname
         tv_prodNo.text = Html.fromHtml("生产单号:&nbsp;<font color='#6a5acd'>"+entity.prodNo+"</font>")
         tv_procedureName.text = Html.fromHtml("工序:&nbsp;<font color='#6a5acd'>" + entity.processName + "</font>")
+        tv_carModelName.text = Html.fromHtml("车型:&nbsp;<font color='#6a5acd'>" + entity.carModelName + "</font>")
         tv_userName.text = Html.fromHtml("汇报人:&nbsp;<font color='#000000'>"+ entity.workUserName+"</font>")
         tv_barcode.text = Html.fromHtml("条码:&nbsp;<font color='#6a5acd'>"+ entity.barcode+"</font>")
         tv_reportDate.text = Html.fromHtml("报工时间:&nbsp;<font color='#000000'>"+ entity.createDate.substring(0,19) +"</font>")

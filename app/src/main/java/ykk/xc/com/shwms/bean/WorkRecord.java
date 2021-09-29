@@ -36,6 +36,7 @@ public class WorkRecord implements Serializable,Cloneable {
 	private int passUserId;					//审核人id
 	private String passDate;				//审核时间
 	private int passStatus;					//审核状态,0:未审核，1:已审核
+	private String carModelName;			// 车型名称
 
 	private ICItem_App icItem;
 
@@ -313,6 +314,14 @@ public class WorkRecord implements Serializable,Cloneable {
 
 	public void setProcessName(String processName) {
 		this.processName = processName;
+	}
+
+	public String getCarModelName() {
+		return carModelName;
+	}
+
+	public void setCarModelName(String carModelName) {
+		this.carModelName = carModelName;
 	}
 	
 	

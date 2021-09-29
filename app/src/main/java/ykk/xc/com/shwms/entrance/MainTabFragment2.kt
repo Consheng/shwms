@@ -50,7 +50,7 @@ class MainTabFragment2 : BaseFragment() {
                 }
                 show(Prod_Report_MainActivity::class.java, null)
             }
-            R.id.relative4  -> { // 完工汇报
+            R.id.relative4  -> { // 报工查询
                 show(Prod_Report_SearchActivity::class.java, null)
             }
             R.id.relative5  -> { // 图纸查看

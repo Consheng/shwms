@@ -60,10 +60,19 @@
         android:textSize="@dimen/_12sp" />
 
     <TextView
-        android:id="@+id/tv_userName"
+        android:id="@+id/tv_carModelName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_procedureName"
+        android:text="车型："
+        android:textColor="@color/c_666666"
+        android:textSize="@dimen/_12sp" />
+
+    <TextView
+        android:id="@+id/tv_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_carModelName"
         android:text="汇报人："
         android:textColor="@color/c_666666"
         android:textSize="@dimen/_12sp" />
@@ -73,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_16dp"
-        android:layout_below="@+id/tv_procedureName"
+        android:layout_below="@+id/tv_carModelName"
         android:layout_toRightOf="@+id/tv_userName"
         android:text="条码："
         android:visibility="gone"
@@ -85,7 +94,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/tv_procedureName"
+        android:layout_below="@+id/tv_carModelName"
         android:layout_marginLeft="@dimen/_10dp"
         android:text="报工时间："
         android:textColor="@color/c_666666"
